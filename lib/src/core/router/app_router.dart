@@ -24,7 +24,7 @@ class AppRouter {
         },
       ),
       // Login
-      GoRoute(path: '/', builder: (_, __) => const Login()),
+      GoRoute(path: '/login', builder: (_, __) => const Login()),
 
       // Home principal luego del login (usuario normal)
       //GoRoute(path: '/home', builder: (_, __) => const UserHomePage()),

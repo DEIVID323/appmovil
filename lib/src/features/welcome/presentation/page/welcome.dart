@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jdphotomap/src/core/constants/constants.dart';
 import 'package:jdphotomap/src/features/welcome/presentation/widgets/welcome_button.dart';
 
@@ -72,7 +73,9 @@ class _WelcomeState extends State<Welcome> {
                     ),
                     WelcomeButton(
                       label: 'Iniciar sesión',
-                      onPressed: () => context.go('/login'),
+                      onPressed: () {
+                        context.go('/login');
+                      },
                       color: Constants.secondaryColor,
                     ),
                   ],
