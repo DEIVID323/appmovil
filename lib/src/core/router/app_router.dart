@@ -16,6 +16,12 @@ class AppRouter {
           return const Login();
         },
       ),
+      GoRoute(
+        path: '/welcome',
+        builder: (_, __) {
+          return const Welcome();
+        },
+      )
     ],
   );
 }
