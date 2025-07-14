@@ -19,7 +19,7 @@ class AppRouter {
       ),
       GoRoute(
         path: '/welcome',
-        builder: (_, __) {
+        builder: (_, _) {
           return const Welcome();
         },
       ),
