@@ -8,6 +8,8 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
+  final String label =
+      'Crea una cuenta con nosotros y descubre fotógrafos cerca de tu ubicación para cualquier evento o sesión.';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,6 +17,7 @@ class _WelcomeState extends State<Welcome> {
         child: SizedBox(
           width: double.infinity,
           child: Column(
+            spacing: 12,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Padding(
@@ -27,6 +30,14 @@ class _WelcomeState extends State<Welcome> {
               const Text(
                 'Bienvenido a JD PhotoMap',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
+              ),
+              Text(
+                label,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ],
           ),
