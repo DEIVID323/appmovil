@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jdphotomap/src/core/constants/constants.dart';
 
 class LightTheme {
   static ThemeData? _instance;
@@ -15,6 +16,13 @@ class LightTheme {
   }
 
   static ThemeData _createLightTheme(BuildContext context) {
-    return ThemeData(brightness: Brightness.light, fontFamily: 'NunitoSans');
+    return ThemeData(
+      brightness: Brightness.light,
+      fontFamily: 'NunitoSans',
+      colorScheme: const ColorScheme.light(
+        primary: Constants.primaryColor,
+        secondary: Constants.secondaryColor,
+      ),
+    );
   }
 }
