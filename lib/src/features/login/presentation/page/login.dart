@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
 
     if (email == 'admin@demo.com' && password == 'admin123') {
       // Aquí podrías guardar el rol y hacer la redirección según el tipo
-      context.go('/welcome'); // simulamos que entra como usuario normal
+      context.go('/home'); // simulamos que entra como usuario normal
     } else {
       ScaffoldMessenger.of(
         context,
@@ -69,6 +69,7 @@ class _LoginState extends State<Login> {
                       _loginUser();
                     }
                   },
+
                   child: const Text('Ingresar'),
                 ),
               ],
