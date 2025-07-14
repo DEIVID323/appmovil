@@ -53,8 +53,17 @@ class _WelcomeState extends State<Welcome> {
                   spacing: Constants.paddingValue,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    WelcomeButton(label: 'Crear cuenta', onPressed: () {}),
-                    WelcomeButton(label: 'Iniciar sesión', onPressed: () {}),
+                    WelcomeButton(
+                      label: 'Crear una cuenta',
+                      onPressed: () {},
+                      color: Constants.primaryColor,
+                      textColor: Colors.white,
+                    ),
+                    WelcomeButton(
+                      label: 'Iniciar sesión',
+                      onPressed: () {},
+                      color: Constants.secondaryColor,
+                    ),
                   ],
                 ),
               ],
