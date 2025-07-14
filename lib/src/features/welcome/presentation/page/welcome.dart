@@ -11,14 +11,26 @@ class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          SizedBox.square(
-            dimension: 300,
-            child: Image.asset('assets/images/logo1.png'),
+      body: SafeArea(
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: SizedBox.square(
+                  dimension: 200,
+                  child: Image.asset('assets/images/logo1.png'),
+                ),
+              ),
+              const Text(
+                'Bienvenido a JD PhotoMap',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
