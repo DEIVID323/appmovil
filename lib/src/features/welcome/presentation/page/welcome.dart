@@ -19,35 +19,46 @@ class _WelcomeState extends State<Welcome> {
         child: SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: Constants.contentPadding,
+            padding: Constants.contentPadding.copyWith(
+              left: Constants.paddingValue * 6,
+              right: Constants.paddingValue * 6,
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               spacing: Constants.paddingValue,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 40),
-                  child: SizedBox.square(
-                    dimension: 200,
-                    child: Image.asset('assets/images/logo1.png'),
-                  ),
-                ),
-                const Text(
-                  'Bienvenido a JD PhotoMap',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: Constants.paddingValue * 2,
-                  ),
-                  child: Text(
-                    label,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w900,
+                Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 40),
+                      child: SizedBox.square(
+                        dimension: 200,
+                        child: Image.asset('assets/images/logo1.png'),
+                      ),
                     ),
-                  ),
+                    const Text(
+                      'Bienvenido a JD PhotoMap',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: Constants.paddingValue * 2,
+                      ),
+                      child: Text(
+                        label,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 Column(
                   spacing: Constants.paddingValue,
