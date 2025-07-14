@@ -11,7 +11,7 @@ class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: <Widget>[Image.asset('assets/images/logo.png')]),
+      body: Column(children: <Widget>[Image.asset('assets/images/logo.jpg')]),
     );
   }
 }
