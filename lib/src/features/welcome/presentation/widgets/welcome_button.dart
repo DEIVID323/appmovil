@@ -14,19 +14,24 @@ class WelcomeButton extends StatelessWidget {
   final Color color;
   final Color textColor;
 
+  BorderRadius get borderRadius => Constants.borderRadius * 2;
+
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: color,
-        borderRadius: Constants.borderRadius,
+        borderRadius: borderRadius,
+        border: Border.all(color: Constants.primaryColor, width: 2),
       ),
+
       child: InkWell(
+        borderRadius: borderRadius,
         onTap: onPressed,
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              vertical: Constants.paddingValue * 2,
+              vertical: Constants.paddingValue * 3,
             ),
             child: Text(
               label,

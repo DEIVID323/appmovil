@@ -61,7 +61,7 @@ class _WelcomeState extends State<Welcome> {
                   ],
                 ),
                 Column(
-                  spacing: Constants.paddingValue,
+                  spacing: Constants.paddingValue * 2.5,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     WelcomeButton(
