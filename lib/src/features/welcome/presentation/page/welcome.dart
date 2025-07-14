@@ -67,7 +67,9 @@ class _WelcomeState extends State<Welcome> {
                   children: <Widget>[
                     WelcomeButton(
                       label: 'Crear una cuenta',
-                      onPressed: () {},
+                      onPressed: () {
+                        context.go('/register');
+                      },
                       color: Constants.primaryColor,
                       textColor: Colors.white,
                     ),
