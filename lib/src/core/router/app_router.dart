@@ -23,6 +23,11 @@ class AppRouter {
           return const Welcome();
         },
       ),
+      // Login
+      GoRoute(path: '/', builder: (_, __) => const Login()),
+
+      // Home principal luego del login (usuario normal)
+      //GoRoute(path: '/home', builder: (_, __) => const UserHomePage()),
     ],
   );
 }
