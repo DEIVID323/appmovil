@@ -72,7 +72,7 @@ class _WelcomeState extends State<Welcome> {
                     ),
                     WelcomeButton(
                       label: 'Iniciar sesión',
-                      onPressed: () {},
+                      onPressed: () => context.go('/login'),
                       color: Constants.secondaryColor,
                     ),
                   ],
