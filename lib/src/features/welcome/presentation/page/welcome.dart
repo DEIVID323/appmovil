@@ -11,7 +11,15 @@ class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: <Widget>[Image.asset('assets/images/logo1.png')]),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          SizedBox.square(
+            dimension: 300,
+            child: Image.asset('assets/images/logo1.png'),
+          ),
+        ],
+      ),
     );
   }
 }
