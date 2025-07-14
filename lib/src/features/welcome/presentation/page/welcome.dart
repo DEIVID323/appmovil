@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jdphotomap/src/core/constants/constants.dart';
+import 'package:jdphotomap/src/features/welcome/presentation/widgets/welcome_button.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
@@ -47,6 +48,14 @@ class _WelcomeState extends State<Welcome> {
                       fontWeight: FontWeight.w900,
                     ),
                   ),
+                ),
+                Column(
+                  spacing: Constants.paddingValue,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    WelcomeButton(label: 'Crear cuenta', onPressed: () {}),
+                    WelcomeButton(label: 'Iniciar sesión', onPressed: () {}),
+                  ],
                 ),
               ],
             ),
