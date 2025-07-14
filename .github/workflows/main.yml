@@ -1,0 +1,68 @@
+name: Flutter CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: "Static code analysis"
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout con credenciales persistentes
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      # 3. Setup Java (requerido por algunos plugins de Android)
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 21
+
+      # 4. Setup Flutter
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      # 5. Cache de dependencias
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            $PUB_CACHE
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: ${{ runner.os }}-pub-
+
+      # 6. Obtener dependencias (usará el token para repos privados)
+      - name: Get dependencies
+        run: flutter pub get
+
+      # 7. Análisis estático
+      - name: Lint analysis
+        run: flutter analyze
+
+  check-dart-formatting:
+          name: "Check Dart formatting"
+          runs-on: ubuntu-latest
+          steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                persist-credentials: true
+      
+            - name: Setup Flutter
+              uses: subosito/flutter-action@v2
+              with:
+                channel: stable
+      
+            - name: Get dependencies
+              run: flutter pub get
+      
+            - name: Check Dart formatting
+              run: dart format --set-exit-if-changed .
+      
