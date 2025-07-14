@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jdphotomap/src/features/home/presentation/page/home.dart';
 import 'package:jdphotomap/src/features/login/presentation/page/login.dart';
 import 'package:jdphotomap/src/features/register/presentation/page/register.dart';
 import 'package:jdphotomap/src/features/welcome/presentation/page/welcome.dart';
@@ -29,6 +30,7 @@ class AppRouter {
       // Home principal luego del login (usuario normal)
       //GoRoute(path: '/home', builder: (_, __) => const UserHomePage()),
       GoRoute(path: '/register', builder: (_, __) => const Register()),
+      GoRoute(path: '/home', builder: (_, __) => const Home()),
     ],
   );
 }
