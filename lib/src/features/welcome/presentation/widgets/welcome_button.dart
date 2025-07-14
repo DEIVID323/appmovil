@@ -21,17 +21,20 @@ class WelcomeButton extends StatelessWidget {
         color: color,
         borderRadius: Constants.borderRadius,
       ),
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: Constants.paddingValue * 2,
-          ),
-          child: Text(
-            label,
-            style: TextStyle(
-              color: textColor,
-              fontSize: 16,
-              fontWeight: FontWeight.w900,
+      child: InkWell(
+        onTap: onPressed,
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: Constants.paddingValue * 2,
+            ),
+            child: Text(
+              label,
+              style: TextStyle(
+                color: textColor,
+                fontSize: 16,
+                fontWeight: FontWeight.w900,
+              ),
             ),
           ),
         ),
