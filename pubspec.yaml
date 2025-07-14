@@ -34,7 +34,7 @@ flutter:
         - asset: assets/fonts/nunito_sans.ttf
 
   assets:
-    - assets/images/logo.jpg
+    - assets/images/
 
   #   - images/a_dot_ham.jpeg
 
