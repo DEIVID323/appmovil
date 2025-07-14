@@ -28,14 +28,14 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-fonts:
-  - family: NunitoSans
-    fonts:
-      - asset: assets/fonts/nunito_sans.ttf
+  fonts:
+    - family: NunitoSans
+      fonts:
+        - asset: assets/fonts/nunito_sans.ttf
 
-  # To add assets to your application, add an assets section, like this:
-assets:
-  - assets/images/logo.png
+    # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/logo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
