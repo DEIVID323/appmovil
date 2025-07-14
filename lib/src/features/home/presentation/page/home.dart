@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
 class Home extends StatelessWidget {
@@ -139,7 +140,24 @@ class Home extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.indigo,
         unselectedItemColor: Colors.grey,
-        currentIndex: 0,
+        currentIndex:
+            0, // Asegúrate de usar este valor dinámicamente si quieres cambiar la pestaña activa
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              context.go('/welcome'); // 🚀 Cambia a la ruta que necesites
+              break;
+            case 1:
+              // Aquí podrías hacer otra navegación
+              break;
+            case 2:
+              // Navegar a galería
+              break;
+            case 3:
+              // Navegar al perfil
+              break;
+          }
+        },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
