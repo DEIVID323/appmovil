@@ -18,7 +18,7 @@ class _LoginState extends State<Login> {
     final String email = _emailController.text.trim();
     final String password = _passController.text;
 
-    if (email == 'admin@demo.com' && password == 'admin123') {
+    if (email == 'josedavidrojas323@gmail.com' && password == 'admin123') {
       // Aquí podrías guardar el rol y hacer la redirección según el tipo
       context.go('/home'); // simulamos que entra como usuario normal
     } else {
