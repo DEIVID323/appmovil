@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "970473686718",
+    "project_id": "photomap-d6f41",
+    "storage_bucket": "photomap-d6f41.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970473686718:android:319baa857b76c2bf87c0ef",
+        "android_client_info": {
+          "package_name": "com.example.jdphotomap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG4T6o5ZU2uRiushn5Tbb4hRAx0DQyeMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
