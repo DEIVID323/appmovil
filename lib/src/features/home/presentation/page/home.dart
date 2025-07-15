@@ -149,11 +149,13 @@ class Home extends StatelessWidget {
               break;
             case 1:
               // Aquí podrías hacer otra navegación
+
               break;
             case 2:
               // Navegar a galería
               break;
             case 3:
+              context.go('/photographer_profile');
               // Navegar al perfil
               break;
           }
