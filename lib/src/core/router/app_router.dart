@@ -12,14 +12,11 @@ class AppRouter {
   late final GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
     initialLocation: '/welcome',
-
+    debugLogDiagnostics: true,
+    redirect: (BuildContext context, GoRouterState state) {
+      return null;
+    },
     routes: <RouteBase>[
-      GoRoute(
-        path: '/',
-        builder: (BuildContext context, GoRouterState state) {
-          return const Login();
-        },
-      ),
       GoRoute(
         path: '/welcome',
         builder: (_, _) {
@@ -28,12 +25,10 @@ class AppRouter {
       ),
       // Login
       GoRoute(path: '/login', builder: (_, __) => const Login()),
-      // Home principal luego del login (usuario normal)
-      //GoRoute(path: '/home', builder: (_, __) => const UserHomePage()),
       GoRoute(path: '/register', builder: (_, __) => const Register()),
       GoRoute(path: '/home', builder: (_, __) => const Home()),
       GoRoute(
-        path: '/photographer_profile',
+        path: '/myProfile',
         builder: (_, __) => const PhotographerProfile(),
       ),
     ],

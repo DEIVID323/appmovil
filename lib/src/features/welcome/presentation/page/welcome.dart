@@ -68,7 +68,7 @@ class _WelcomeState extends State<Welcome> {
                     WelcomeButton(
                       label: 'Crear una cuenta',
                       onPressed: () {
-                        context.go('/register');
+                        context.push('/register');
                       },
                       color: Constants.primaryColor,
                       textColor: Colors.white,
@@ -76,7 +76,7 @@ class _WelcomeState extends State<Welcome> {
                     WelcomeButton(
                       label: 'Iniciar sesión',
                       onPressed: () {
-                        context.go('/login');
+                        context.push('/login');
                       },
                       color: Constants.secondaryColor,
                     ),
