@@ -19,6 +19,8 @@ class LoginCubit extends Cubit<LoginState> {
       await _usecase.login(loginEntity: loginEntity);
     } catch (e) {
       emit(state.copyWith(status: Status.error, message: e.toString()));
+    } finally {
+      emit(state.copyWith(status: Status.initial));
     }
   }
 }

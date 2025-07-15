@@ -10,7 +10,7 @@ class IAppDatasource implements AppDatasource {
 
   @override
   Stream<User?> authStatus() {
-    return _firebaseAuth.authStateChanges();
+    return _firebaseAuth.userChanges();
   }
 
   @override

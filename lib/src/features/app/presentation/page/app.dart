@@ -29,12 +29,17 @@ class _AppState extends State<App> {
       create: (BuildContext context) => sl<AppCubit>(),
       child: BlocBuilder<AppCubit, AppState>(
         builder: (BuildContext context, AppState state) {
-          return MaterialApp.router(
-            theme: LightTheme.instance,
-            darkTheme: DarkTheme.instance,
-            themeMode: ThemeMode.light,
-            routerConfig: _appRouter.router,
-            debugShowCheckedModeBanner: false,
+          return MediaQuery(
+            data: MediaQuery.of(
+              context,
+            ).copyWith(textScaler: const TextScaler.linear(1)),
+            child: MaterialApp.router(
+              theme: LightTheme.instance,
+              darkTheme: DarkTheme.instance,
+              themeMode: ThemeMode.light,
+              routerConfig: _appRouter.router,
+              debugShowCheckedModeBanner: false,
+            ),
           );
         },
       ),

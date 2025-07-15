@@ -84,7 +84,7 @@ class Home extends StatelessWidget {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemCount: categories.length,
-                separatorBuilder: (_, __) => const SizedBox(width: 12),
+                separatorBuilder: (_, _) => const SizedBox(width: 12),
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     children: <Widget>[
@@ -97,9 +97,8 @@ class Home extends StatelessWidget {
                           child: Image.asset(
                             icons[index],
                             fit: BoxFit.cover,
-                            errorBuilder:
-                                (_, __, ___) =>
-                                    const Icon(Icons.image_not_supported),
+                            errorBuilder: (_, _, _) =>
+                                const Icon(Icons.image_not_supported),
                           ),
                         ),
                       ),
@@ -127,10 +126,9 @@ class Home extends StatelessWidget {
                 child: Image.asset(
                   'assets/images/logo1.png',
                   fit: BoxFit.cover,
-                  errorBuilder:
-                      (_, __, ___) => const Center(
-                        child: Icon(Icons.image_not_supported, size: 50),
-                      ),
+                  errorBuilder: (_, _, _) => const Center(
+                    child: Icon(Icons.image_not_supported, size: 50),
+                  ),
                 ),
               ),
             ),

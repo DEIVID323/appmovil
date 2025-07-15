@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jdphotomap/src/core/constants/constants.dart';
 
 class DarkTheme {
   static ThemeData? _instance;
@@ -15,6 +16,10 @@ class DarkTheme {
   }
 
   static ThemeData _createDarkTheme(BuildContext context) {
-    return ThemeData(brightness: Brightness.dark, fontFamily: 'NunitoSans');
+    return ThemeData(
+      brightness: Brightness.dark,
+      fontFamily: 'NunitoSans',
+      pageTransitionsTheme: Constants.pageTransition,
+    );
   }
 }

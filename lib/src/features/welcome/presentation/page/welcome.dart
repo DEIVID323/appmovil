@@ -68,7 +68,7 @@ class _WelcomeState extends State<Welcome> {
                     WelcomeButton(
                       label: 'Crear una cuenta',
                       onPressed: () {
-                        context.push('/register');
+                        context.push('/signup');
                       },
                       color: Constants.primaryColor,
                       textColor: Colors.white,
