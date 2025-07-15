@@ -145,7 +145,7 @@ class Home extends StatelessWidget {
         onTap: (int index) {
           switch (index) {
             case 0:
-              context.go('/home'); // 🚀 Cambia a la ruta que necesites
+              context.go('/welcome'); // 🚀 Cambia a la ruta que necesites
               break;
             case 1:
               // Aquí podrías hacer otra navegación

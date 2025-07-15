@@ -6,7 +6,7 @@ class PhotographerProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> images = <String>[
-      'assets/images/wedding1.jpg',
+      'assets/images/logo1.png',
       'assets/images/wedding2.jpg',
     ];
 
@@ -21,7 +21,7 @@ class PhotographerProfile extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: CircleAvatar(
             radius: 40,
-            backgroundImage: AssetImage('assets/images/profile.jpg'),
+            backgroundImage: AssetImage('assets/images/logo1.png'),
           ),
         ),
       ),
@@ -29,7 +29,7 @@ class PhotographerProfile extends StatelessWidget {
         children: <Widget>[
           const SizedBox(height: 8),
           const Text(
-            'JOHN DOE',
+            'DAVID ROJAS',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 6),
@@ -51,9 +51,18 @@ class PhotographerProfile extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Text('Proyecto', style: TextStyle(fontWeight: FontWeight.bold)),
-                Text('Acerca de'),
-                Text('Fotos'),
+                Text(
+                  'Portafolio',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'Servicios',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'Acerca de mí',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ],
             ),
           ),
