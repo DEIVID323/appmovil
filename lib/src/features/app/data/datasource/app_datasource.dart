@@ -10,7 +10,15 @@ class IAppDatasource implements AppDatasource {
 
   @override
   Stream<User?> authStatus() {
-    return _firebaseAuth.userChanges();
+    final Stream<User?> authStateChanges = _firebaseAuth.userChanges();
+    authStateChanges.listen((User? user) {
+      if (user != null) {
+        print('User is signed in: ${user.email}');
+      } else {
+        print('User is signed out');
+      }
+    });
+    return authStateChanges;
   }
 
   @override

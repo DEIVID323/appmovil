@@ -22,7 +22,6 @@ class AppCubit extends Cubit<AppState> {
   }
 
   void _onSucces(User? user) {
-    print('User: $user');
     emit(state.copyWith(user: user, status: AppStatus.authenticated));
   }
 

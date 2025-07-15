@@ -8,9 +8,7 @@ class IAppRepository implements AppRepository {
   final AppDatasource _datasource;
 
   @override
-  Stream<User?> authStatus() {
-    return _datasource.authStatus();
-  }
+  Stream<User?> authStatus() => _datasource.authStatus();
 
   @override
   Future<void> signOut() => _datasource.signOut();
