@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jdphotomap/src/features/home/presentation/page/home.dart';
 import 'package:jdphotomap/src/features/login/presentation/page/login.dart';
+import 'package:jdphotomap/src/features/profile_photographer/presentation/page/photographer_profile.dart';
 import 'package:jdphotomap/src/features/register/presentation/page/register.dart';
 import 'package:jdphotomap/src/features/welcome/presentation/page/welcome.dart';
 
@@ -31,6 +32,10 @@ class AppRouter {
       //GoRoute(path: '/home', builder: (_, __) => const UserHomePage()),
       GoRoute(path: '/register', builder: (_, __) => const Register()),
       GoRoute(path: '/home', builder: (_, __) => const Home()),
+      GoRoute(
+        path: '/photographer_profile',
+        builder: (_, __) => const PhotographerProfile(),
+      ),
     ],
   );
 }
