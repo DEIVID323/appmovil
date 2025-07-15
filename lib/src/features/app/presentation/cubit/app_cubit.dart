@@ -10,11 +10,13 @@ part 'app_state.dart';
 class AppCubit extends Cubit<AppState> {
   AppCubit({required AppUsecase usecase})
     : _usecase = usecase,
-      super(const AppState());
+      super(const AppState()) {
+    _init();
+  }
   final AppUsecase _usecase;
   StreamSubscription<User?>? _authStatusSubscription;
 
-  void init() {
+  void _init() {
     _authStatusSubscription = _usecase.authStatus().listen(
       _onSucces,
       onError: _onError,
@@ -22,7 +24,11 @@ class AppCubit extends Cubit<AppState> {
   }
 
   void _onSucces(User? user) {
-    emit(state.copyWith(user: user, status: AppStatus.authenticated));
+    if (user != null) {
+      emit(state.copyWith(user: user, status: AppStatus.authenticated));
+    } else {
+      emit(state.copyWith(user: null, status: AppStatus.unauthenticated));
+    }
   }
 
   void _onError(Object error, StackTrace s) {

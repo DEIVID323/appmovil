@@ -22,7 +22,9 @@ class AppRouter {
     redirect: (BuildContext context, GoRouterState state) {
       final AppStatus status = _appCubit.state.status;
       final String currentLocation = state.matchedLocation;
-      if (status == AppStatus.unauthenticated && currentLocation == '/') {
+      const List<String> publicRoutes = <String>['/login', '/signup'];
+      if (status == AppStatus.unauthenticated &&
+          !publicRoutes.contains(currentLocation)) {
         return '/welcome';
       }
       if (status == AppStatus.authenticated &&

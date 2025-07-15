@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jdphotomap/src/features/app/presentation/cubit/app_cubit.dart';
+import 'package:jdphotomap/src/injection/injection.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
 class Home extends StatelessWidget {
@@ -131,6 +133,13 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          Text(sl<AppCubit>().state.user?.email ?? 'No user logged in'),
+            ElevatedButton(
+              onPressed: () {
+                sl<AppCubit>().signOut();
+              },
+              child: const Text('cerrar sesión'),
             ),
           ],
         ),
