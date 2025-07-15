@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
     ];
 
     final List<String> icons = <String>[
-      'assets/images/anniversary.jpg',
+      'assets/images/logo1.png',
       'assets/images/birthday.jpg',
       'assets/images/wedding.jpg',
       'assets/images/prewedding.jpg',
@@ -23,6 +23,7 @@ class Home extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 0,
