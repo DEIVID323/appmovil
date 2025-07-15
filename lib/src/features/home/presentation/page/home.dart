@@ -125,7 +125,7 @@ class Home extends StatelessWidget {
                 height: 180,
                 color: Colors.grey.shade300,
                 child: Image.asset(
-                  'assets/images/featured.jpg',
+                  'assets/images/logo1.png',
                   fit: BoxFit.cover,
                   errorBuilder:
                       (_, __, ___) => const Center(
