@@ -27,6 +27,7 @@ class _AppState extends State<App> {
       darkTheme: DarkTheme.instance,
       themeMode: ThemeMode.light,
       routerConfig: _appRouter.router,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
