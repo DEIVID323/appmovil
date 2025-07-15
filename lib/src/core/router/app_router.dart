@@ -5,7 +5,8 @@ import 'package:jdphotomap/src/features/app/presentation/cubit/app_cubit.dart';
 import 'package:jdphotomap/src/features/home/presentation/page/home.dart';
 import 'package:jdphotomap/src/features/loading/presentation/page/loading_page.dart';
 import 'package:jdphotomap/src/features/login/presentation/page/login.dart';
-import 'package:jdphotomap/src/features/profile_photographer/presentation/page/photographer_profile.dart';
+import 'package:jdphotomap/src/features/my_profile/presentation/page/my_profile.dart';
+import 'package:jdphotomap/src/features/shell/presentation/page/shell.dart';
 import 'package:jdphotomap/src/features/signup/presentation/page/signup.dart';
 import 'package:jdphotomap/src/features/welcome/presentation/page/welcome.dart';
 import 'package:jdphotomap/src/injection/injection.dart';
@@ -51,10 +52,34 @@ class AppRouter {
       // Login
       GoRoute(path: '/login', builder: (_, _) => const Login()),
       GoRoute(path: '/signup', builder: (_, _) => const Signup()),
-      GoRoute(path: '/home', builder: (_, _) => const Home()),
-      GoRoute(
-        path: '/myProfile',
-        builder: (_, _) => const PhotographerProfile(),
+
+      StatefulShellRoute.indexedStack(
+        parentNavigatorKey: _rootNavigatorKey,
+        builder:
+            (
+              BuildContext context,
+              GoRouterState state,
+              StatefulNavigationShell navigationShell,
+            ) => Shell(navigationShell: navigationShell),
+        branches: <StatefulShellBranch>[
+          StatefulShellBranch(
+            routes: <RouteBase>[
+              GoRoute(
+                path: '/home',
+                name: 'home',
+                pageBuilder: (_, _) =>
+                    const NoTransitionPage<Home>(child: Home()),
+              ),
+              GoRoute(
+                path: '/myProfile',
+                name: 'myProfile',
+                caseSensitive: true,
+                pageBuilder: (_, _) =>
+                    const NoTransitionPage<MyProfile>(child: MyProfile()),
+              ),
+            ],
+          ),
+        ],
       ),
     ],
   );

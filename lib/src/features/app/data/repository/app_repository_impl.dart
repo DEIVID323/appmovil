@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:jdphotomap/src/features/app/data/datasource/app_datasource.dart';
+import 'package:jdphotomap/src/features/app/data/model/custom_user_model.dart';
 import 'package:jdphotomap/src/features/app/domain/repository/app_repository.dart';
 
 class IAppRepository implements AppRepository {
@@ -8,7 +8,16 @@ class IAppRepository implements AppRepository {
   final AppDatasource _datasource;
 
   @override
-  Stream<User?> authStatus() => _datasource.authStatus();
+  Stream<CustomUserModel?> authStatus() {
+    final Stream<Map<String, dynamic>?> response = _datasource.authStatus();
+
+    return response.map((Map<String, dynamic>? data) {
+      if (data == null) {
+        return null;
+      }
+      return CustomUserModel.fromJson(json: data);
+    });
+  }
 
   @override
   Future<void> signOut() => _datasource.signOut();

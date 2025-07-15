@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:equatable/equatable.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jdphotomap/src/features/app/domain/entity/custom_user_entity.dart';
 import 'package:jdphotomap/src/features/app/domain/usecase/app_usecase.dart';
 
 part 'app_state.dart';
@@ -14,7 +14,7 @@ class AppCubit extends Cubit<AppState> {
     _init();
   }
   final AppUsecase _usecase;
-  StreamSubscription<User?>? _authStatusSubscription;
+  StreamSubscription<CustomUserEntity?>? _authStatusSubscription;
 
   void _init() {
     _authStatusSubscription = _usecase.authStatus().listen(
@@ -23,7 +23,7 @@ class AppCubit extends Cubit<AppState> {
     );
   }
 
-  void _onSucces(User? user) {
+  void _onSucces(CustomUserEntity? user) {
     if (user != null) {
       emit(state.copyWith(user: user, status: AppStatus.authenticated));
     } else {

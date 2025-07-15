@@ -25,6 +25,8 @@ dependencies:
   cloud_firestore: ^5.6.11
   shared:
     path: packages/shared
+  collection: ^1.19.1
+  rxdart: ^0.28.0
 
 dev_dependencies:
   flutter_test:
