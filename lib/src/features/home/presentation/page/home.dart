@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:jdphotomap/src/core/constants/constants.dart';
 import 'package:jdphotomap/src/features/home/presentation/widgets/current_user_location.dart';
@@ -18,10 +19,10 @@ class _HomeState extends State<Home> {
   ];
 
   final List<String> icons = <String>[
-    'assets/images/logo1.png',
-    'assets/images/birthday.jpg',
-    'assets/images/wedding.jpg',
-    'assets/images/prewedding.jpg',
+    'https://vilaplana.com/wp-content/uploads/2022/06/DX1wpWnWkAALXol-1030x773.jpeg',
+    'https://cdn.aarp.net/content/dam/aarpe/es/home/hogar-familia/familia-bienestar/info-2022/consejos-para-organizar-fiesta-de-cumpleanos/_jcr_content/root/container_main/container_body_main/container_body1/container_body_cf/container_image/articlecontentfragment/cfimage.coreimg.50.932.jpeg/content/dam/aarp/home-and-family/family-and-friends/2022/03/1140-birthday-cake-with-candles-esp.jpg',
+    'https://photobymaug.com/wp-content/uploads/2021/01/Fotografo-de-Bodas-Cuantas-Horas-de-Cobertura-Necesito-para-mi-boda-Mauricio-Urena-Photography-1.jpg',
+    'https://cdn0.matrimonios.cl/article-vendor/7439/original/1280/jpg/lente-35-111_8_127439-165819308769218.webp',
   ];
   @override
   Widget build(BuildContext context) {
@@ -42,7 +43,7 @@ class _HomeState extends State<Home> {
                   hintText: 'Qué estás buscando',
                   prefixIcon: const Icon(Icons.search),
                   filled: true,
-                  fillColor: Colors.grey.shade200,
+                  fillColor: const Color.fromARGB(255, 255, 255, 255),
                   contentPadding: const EdgeInsets.symmetric(vertical: 0),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -81,12 +82,27 @@ class _HomeState extends State<Home> {
                           child: Container(
                             width: 70,
                             height: 70,
-                            color: const Color.fromARGB(255, 208, 4, 4),
-                            child: Image.asset(
-                              icons[index],
+                            color: const Color.fromARGB(255, 255, 255, 255),
+                            child: CachedNetworkImage(
+                              imageUrl: icons[index],
+                              progressIndicatorBuilder:
+                                  (
+                                    BuildContext context,
+                                    String url,
+                                    DownloadProgress progress,
+                                  ) => Center(
+                                    child: CircularProgressIndicator(
+                                      value: progress.progress,
+                                    ),
+                                  ),
+
                               fit: BoxFit.cover,
-                              errorBuilder: (_, _, _) =>
-                                  const Icon(Icons.image_not_supported),
+                              errorWidget:
+                                  (
+                                    BuildContext context,
+                                    String url,
+                                    Object error,
+                                  ) => const Icon(Icons.image_not_supported),
                             ),
                           ),
                         ),
@@ -111,12 +127,17 @@ class _HomeState extends State<Home> {
                 child: Container(
                   height: 180,
                   color: Colors.grey.shade300,
-                  child: Image.asset(
-                    'assets/images/logo1.png',
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        'https://www.uauu.cat/wp-content/uploads/2024/04/tips-votos-boda.jpg',
                     fit: BoxFit.cover,
-                    errorBuilder: (_, _, _) => const Center(
-                      child: Icon(Icons.image_not_supported, size: 50),
-                    ),
+                    placeholder: (BuildContext context, String url) =>
+                        const Center(child: CircularProgressIndicator()),
+                    errorWidget:
+                        (BuildContext context, String url, Object error) =>
+                            const Center(
+                              child: Icon(Icons.image_not_supported, size: 50),
+                            ),
                   ),
                 ),
               ),

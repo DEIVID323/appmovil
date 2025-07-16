@@ -17,7 +17,7 @@ class _MyProfileState extends State<MyProfile>
   late final TabController _tabController;
   late final AppState _appState;
   late final AppCubit _appCubit;
-  final String profileImage = 'assets/images/logo1.png';
+  final String profileImage = 'assets/images/logo.jpg';
   final String testImage =
       'https://missiongrit.com/wp-content/uploads/2024/08/the-top-12-birthday-party-venues-in-charlotte-nc.webp';
 
@@ -63,7 +63,6 @@ class _MyProfileState extends State<MyProfile>
                         Positioned.fill(
                           child: BackdropFilter(
                             filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-                            blendMode: BlendMode.srcIn,
                             child: Container(
                               color: Colors.blue.withValues(alpha: 0.2),
                             ),

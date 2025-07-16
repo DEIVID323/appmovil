@@ -77,6 +77,11 @@ class AppRouter {
                 pageBuilder: (_, _) =>
                     const NoTransitionPage<MyProfile>(child: MyProfile()),
               ),
+              GoRoute(
+                path: '/map',
+                builder: (BuildContext context, GoRouterState state) =>
+                    Container(), // Replace with your actual Map page widget
+              ),
             ],
           ),
         ],
