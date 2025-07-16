@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
                           child: Container(
                             width: 70,
                             height: 70,
-                            color: Colors.grey.shade300,
+                            color: const Color.fromARGB(255, 208, 4, 4),
                             child: Image.asset(
                               icons[index],
                               fit: BoxFit.cover,
