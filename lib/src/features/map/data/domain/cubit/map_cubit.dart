@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-part 'cobit_state.dart';
+part 'map_state.dart';
 
 class CobitCubit extends Cubit<CobitState> {
   CobitCubit() : super(CobitInitial());

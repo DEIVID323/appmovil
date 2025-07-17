@@ -1,4 +1,4 @@
-part of 'cobit_cubit.dart';
+part of 'map_cubit.dart';
 
 sealed class CobitState extends Equatable {
   const CobitState();
