@@ -71,7 +71,7 @@ class AppRouter {
                     const NoTransitionPage<Home>(child: Home()),
               ),
               GoRoute(
-                path: '/myProfile',
+                path: '/map',
                 name: 'myProfile',
                 caseSensitive: true,
                 pageBuilder: (_, _) =>
