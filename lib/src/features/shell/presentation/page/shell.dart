@@ -40,6 +40,14 @@ class _ShellState extends State<Shell> {
           ),
           DestinationRoute(
             page: 2,
+            path: '/map',
+            destinaton: Destination(
+              icon: HugeIcons.strokeRoundedMaps,
+              label: 'Mapa',
+            ),
+          ),
+          DestinationRoute(
+            page: 3,
             path: '/myProfile',
             destinaton: Destination(
               icon: HugeIcons.strokeRoundedUser02,

@@ -9,17 +9,23 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-  late MapboxMap mapboxMap;
+  late MapboxMap _controller;
+  void _onMapCreated(MapboxMap map) {
+    _controller = map;
+
+    // Aquí puedes agregar más lógica para configurar el mapa
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Mapa')),
-      body: MapWidget(
-        onMapCreated: (MapboxMap controller) {
-          mapboxMap = controller;
-        },
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: const Text('Mapa'),
+
+        forceMaterialTransparency: true,
       ),
+      body: MapWidget(onMapCreated: _onMapCreated),
     );
   }
 }

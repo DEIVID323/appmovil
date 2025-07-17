@@ -5,6 +5,7 @@ import 'package:jdphotomap/src/features/app/presentation/cubit/app_cubit.dart';
 import 'package:jdphotomap/src/features/home/presentation/page/home.dart';
 import 'package:jdphotomap/src/features/loading/presentation/page/loading_page.dart';
 import 'package:jdphotomap/src/features/login/presentation/page/login.dart';
+import 'package:jdphotomap/src/features/map/presentation/page/map.dart';
 import 'package:jdphotomap/src/features/my_profile/presentation/page/my_profile.dart';
 import 'package:jdphotomap/src/features/shell/presentation/page/shell.dart';
 import 'package:jdphotomap/src/features/signup/presentation/page/signup.dart';
@@ -71,21 +72,17 @@ class AppRouter {
                     const NoTransitionPage<Home>(child: Home()),
               ),
               GoRoute(
-                path: '/map',
+                path: '/myProfile',
                 name: 'myProfile',
                 caseSensitive: true,
                 pageBuilder: (_, _) =>
                     const NoTransitionPage<MyProfile>(child: MyProfile()),
               ),
-              GoRoute(
-                path: '/map',
-                builder: (BuildContext context, GoRouterState state) =>
-                    Container(), // Replace with your actual Map page widget
-              ),
             ],
           ),
         ],
       ),
+      GoRoute(path: '/map', name: 'map', builder: (_, _) => const MapPage()),
     ],
   );
 }
