@@ -6,7 +6,7 @@ part 'map_state.dart';
 
 class MapBloc extends Bloc<MapEvent, MapState> {
   MapBloc() : super(MapInitial()) {
-    on<MapEvent>((event, emit) {
+    on<MapEvent>((MapEvent event, Emitter<MapState> emit) {
       // TODO: implement event handler
     });
   }
